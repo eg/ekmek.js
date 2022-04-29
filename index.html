@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekmek.js</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ekmek.js</h1>
+        <h2>Sourdough bread calculator</h2>
+        
+        <div class="form-area">
+            <h4>Type the weight of the bread you want to bake</h4>
+            <div class="input-wrapper">
+                <input type="text" / id="input">
+                <span>gr</span>
+            </div>
+            <button type="button" id="calculate">Submit</button>
+        </div>
+        <ul id="ingredients" class="hidden">
+
+        </ul>
+    </div>
+    <script src="src/ekmek.js"></script>
+
+    <script>
+        const calculate = document.getElementById('calculate');
+        const input = document.getElementById('input');
+        const ingredients = document.getElementById('ingredients');
+        calculate.addEventListener('click', () => {
+            var output = Ekmek({
+                weight: input.value
+            });
+            var item = "";
+            for (property in output) {
+                item += `<li><span>${property}:</span> <b>${output[property]}</b></li>`;
+            }
+            ingredients.innerText = ""
+            ingredients.classList.remove('hidden');
+            ingredients.insertAdjacentHTML('beforeend', item);
+        });
+    </script>
+
+</body>
+
+
+</html>
