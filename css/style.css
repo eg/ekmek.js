@@ -49,6 +49,7 @@ input {
     border: 0;
     border: 1px solid transparent;
     text-align: right;
+    margin-right: 10px;
     padding: 0 56px 0 16px;
 }
 input:focus {

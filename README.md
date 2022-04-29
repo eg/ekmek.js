@@ -1,2 +1,2 @@
 # ekmek.js
- a simple javascript function for bread making
+ a simple javascript function for bread baking
